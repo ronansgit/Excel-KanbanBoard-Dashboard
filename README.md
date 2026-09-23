@@ -24,7 +24,7 @@ O usuário pode utilizar filtros interativos para explorar as informações por 
 
 ## 3. Dados > Dashboard
 
-O projeto utiliza o **Power Query** como etapa de preparação dos dados antes da construção do modelo analítico.
+O projeto utiliza o **Power Query** para preparação dos dados que alimentam o modelo analítico.
 
 ### Fluxo de Dados
 
@@ -33,10 +33,6 @@ Base de Dados
       │
       ▼
 Power Query
-      │
-      ├── Tratamento
-      ├── Padronização
-      └── Transformação
       │
       ▼
 Modelo de Dados
@@ -50,9 +46,7 @@ Dashboard
 
 ### Base de Dados
 
-A consulta principal foi estruturada no Power Query para organizar e preparar os dados utilizados pelo dashboard.
-
-Essa etapa permite centralizar o tratamento dos dados e manter uma estrutura consistente para as análises posteriores.
+Consulta desenvolvida no Power Query para estruturar os dados utilizados no projeto.
 
 ![Base de Dados](base-dados.png)
 
@@ -60,102 +54,127 @@ Essa etapa permite centralizar o tratamento dos dados e manter uma estrutura con
 
 ## 4. Tabela dCalendário
 
-Foi criada uma dimensão de calendário diretamente no **Power Query** para estruturar as análises relacionadas a datas.
+Dimensão de calendário criada diretamente no **Power Query** para suportar as análises relacionadas a períodos.
 
-A `dCalendário` contém informações utilizadas na segmentação e análise temporal dos dados, como:
+Principais campos:
 
 * Data
 * Ano
 * Mês
 
-A utilização de uma dimensão de calendário também permite estruturar corretamente os relacionamentos do modelo e as análises baseadas em períodos.
-
 ![Criação da tabela dCalendário](dcalendario.png)
 
 ---
 
-## 5. Tabelas Dinâmicas
+## 5. Modelagem de Dados — Power Pivot
 
-As **Tabelas Dinâmicas** funcionam como uma camada de análise entre o modelo de dados e a interface final do dashboard.
+As tabelas foram carregadas no **Modelo de Dados do Excel** e relacionadas utilizando o Power Pivot.
 
-Elas foram utilizadas para estruturar os dados necessários aos principais componentes visuais, permitindo analisar diferentes aspectos das tarefas.
+Os relacionamentos estruturam a conexão entre as tabelas utilizadas nas análises.
+
+![Relacionamentos do Power Pivot](relacionamentos.png)
+
+---
+
+## 6. Tabelas Dinâmicas
+
+As **Tabelas Dinâmicas** foram utilizadas para organizar os dados provenientes do modelo e alimentar os componentes analíticos do dashboard.
 
 ![Tabelas Dinâmicas](tabelas-dinamicas.png)
 
 ---
 
-## 6. Esboço do Dashboard
+## 7. Esboço do Dashboard
 
-Antes da construção da interface final, foi desenvolvido um esboço para definir a estrutura visual e a distribuição dos componentes.
+O layout foi planejado previamente por meio de um esboço, definindo a distribuição dos componentes e a hierarquia das informações.
 
 O planejamento considerou:
 
-* Hierarquia das informações
+* Hierarquia visual
 * Posicionamento dos indicadores
 * Organização dos filtros
-* Fluxo de leitura (Priorizando leitura em Z)
-* Usabilidade da interface
-
-Essa etapa serviu como referência para a implementação do layout final. "IMAGEM ILUSTRATIVA"
+* Fluxo de leitura em **Z**
+* Usabilidade
 
 ![Esboço do Dashboard](esboco-dashboard.png)
 
 ---
 
-## 7. Ferramentas e Skills
+## 8. Arquitetura da Solução
 
-| Tecnologia / Skill       | Aplicação                                           |
-| ------------------------ | --------------------------------------------------- |
-| **Microsoft Excel**      | Desenvolvimento da solução e interface do dashboard |
-| **Power Query**          | ETL, tratamento e transformação dos dados           |
-| **Power Pivot**          | Modelagem e relacionamento entre tabelas            |
-| **DAX**                  | Criação de medidas e cálculos analíticos            |
-| **Segmentação de Dados** | Filtros e interação com o dashboard                 |
-| **UI/UX Design**         | Estrutura visual, hierarquia e usabilidade          |
+O projeto segue uma estrutura composta por cinco camadas:
+
+```text
+                         DADOS
+                           │
+                           ▼
+                    ┌─────────────┐
+                    │ POWER QUERY │
+                    └─────────────┘
+                           │
+                           ▼
+                    ┌─────────────┐
+                    │ POWER PIVOT │
+                    └─────────────┘
+                           │
+                           ▼
+                       ┌───────┐
+                       │  DAX  │
+                       └───────┘
+                           │
+                           ▼
+                ┌───────────────────┐
+                │ TABELAS DINÂMICAS │
+                └───────────────────┘
+                           │
+                           ▼
+                  ┌────────────────┐
+                  │   DASHBOARD    │
+                  └────────────────┘
+```
+
+| Camada                | Responsabilidade          |
+| --------------------- | ------------------------- |
+| **Power Query**       | Preparação dos dados      |
+| **Power Pivot**       | Modelo e relacionamentos  |
+| **DAX**               | Medidas e cálculos        |
+| **Tabelas Dinâmicas** | Estruturação das análises |
+| **Dashboard**         | Visualização e interação  |
 
 ---
 
-## 8. Estrutura do Projeto
+## 9. Ferramentas e Skills
+
+| Tecnologia / Skill       | Aplicação                    |
+| ------------------------ | ---------------------------- |
+| **Microsoft Excel**      | Desenvolvimento da solução   |
+| **Power Query**          | ETL e transformação de dados |
+| **Power Pivot**          | Modelagem e relacionamentos  |
+| **DAX**                  | Medidas e cálculos           |
+| **Segmentação de Dados** | Interatividade e filtros     |
+| **UI/UX Design**         | Layout e experiência de uso  |
+
+---
+
+## 10. Estrutura do Projeto
 
 ```text
 Dashboard-Kanban-Board/
 │
-├── Dashboard Kanban Board.xlsx
-│
-├── Dark.PNG
-├── Base_Dashboard.PNG
-├── Criação da tabela dCalendário.PNG
-├── Tabelas Dinâmicas.PNG
-├── Esboço.PNG
+├── dashboard.png
+├── base-dados.png
+├── dcalendario.png
+├── relacionamentos.png
+├── tabelas-dinamicas.png
+├── esboco-dashboard.png
 │
 └── README.md
 ```
 
 ---
 
-## 9. Conceitos Aplicados
+## 11. Resultado
 
-O projeto demonstra a integração de diferentes recursos do Excel em uma única solução:
+Solução de análise desenvolvida inteiramente no Excel, integrando **tratamento de dados, modelagem, cálculos, visualização e interatividade** em um único projeto.
 
-**ETL**
-→ preparação e transformação dos dados com Power Query.
-
-**Modelagem**
-→ estruturação das tabelas e relacionamentos utilizando Power Pivot.
-
-**Análise**
-→ criação de medidas e indicadores com DAX.
-
-**Visualização**
-→ construção de um dashboard interativo com Tabelas Dinâmicas e Segmentações de Dados.
-
-**UI/UX**
-→ planejamento e organização da interface para facilitar a interpretação das informações.
-
----
-
-## 10. Resultado
-
-O resultado é uma solução de análise construída inteiramente no Excel, combinando **tratamento de dados, modelagem, análise, interatividade e design de interface** em um único projeto.
-
-O projeto faz parte do meu portfólio de soluções desenvolvidas com Excel e ferramentas de análise de dados.
+O projeto demonstra a aplicação prática dos principais recursos do Excel para construção de uma solução de análise de dados.
