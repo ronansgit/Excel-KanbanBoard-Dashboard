@@ -84,15 +84,6 @@ As **Tabelas Dinâmicas** funcionam como uma camada de análise entre o modelo d
 
 Elas foram utilizadas para estruturar os dados necessários aos principais componentes visuais, permitindo analisar diferentes aspectos das tarefas.
 
-Entre as informações utilizadas estão:
-
-* Status das tarefas
-* Prioridades
-* Responsáveis
-* Prazos
-* Quantidade de atividades
-* Distribuição das tarefas
-
 ![Tabelas Dinâmicas](tabelas-dinamicas.png)
 
 ---
@@ -106,11 +97,10 @@ O planejamento considerou:
 * Hierarquia das informações
 * Posicionamento dos indicadores
 * Organização dos filtros
-* Área destinada ao Kanban
-* Fluxo de leitura
+* Fluxo de leitura (Priorizando leitura em Z)
 * Usabilidade da interface
 
-Essa etapa serviu como referência para a implementação do layout final.
+Essa etapa serviu como referência para a implementação do layout final. "IMAGEM ILUSTRATIVA"
 
 ![Esboço do Dashboard](esboco-dashboard.png)
 
