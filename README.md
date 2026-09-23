@@ -67,10 +67,6 @@ A `dCalendário` contém informações utilizadas na segmentação e análise te
 * Data
 * Ano
 * Mês
-* Número do mês
-* Trimestre
-* Dia
-* Dia da semana
 
 A utilização de uma dimensão de calendário também permite estruturar corretamente os relacionamentos do modelo e as análises baseadas em períodos.
 
