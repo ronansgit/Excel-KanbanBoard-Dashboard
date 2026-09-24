@@ -106,11 +106,6 @@ O dashboard possui uma camada de interação desenvolvida com **VBA**, adicionan
 
 ### Botões
 
-| Botão | Função |
-|---|---|
-| **Tela Cheia** | Alterna o Excel para uma visualização ampliada, proporcionando maior área para exibição do dashboard. |
-| **Atualizar** | Executa a rotina de atualização dos dados e componentes utilizados pelo dashboard. |
-
 ![Botões do Dashboard](botoes.png)
 
 ### VBA
