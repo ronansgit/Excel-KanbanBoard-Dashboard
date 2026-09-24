@@ -100,6 +100,25 @@ O planejamento considerou:
 
 ---
 
+## 8. Interface e Automações
+
+O dashboard possui uma camada de interação desenvolvida com **VBA**, adicionando funcionalidades ao ambiente Excel por meio de botões personalizados.
+
+### Botões
+
+| Botão | Função |
+|---|---|
+| **Tela Cheia** | Alterna o Excel para uma visualização ampliada, proporcionando maior área para exibição do dashboard. |
+| **Atualizar** | Executa a rotina de atualização dos dados e componentes utilizados pelo dashboard. |
+
+![Botões do Dashboard](botoes.png)
+
+### VBA
+
+As funcionalidades dos botões são executadas por **macros VBA**, integrando a interface do dashboard aos recursos do Excel.
+
+![Macros VBA](macros.png)
+
 ## 8. Arquitetura da Solução
 
 O projeto segue uma estrutura composta por cinco camadas:
